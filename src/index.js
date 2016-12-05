@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, Route, hashHistory } from 'react-router'
+import App from './App'
+import LangSelector from './components/LangSelector'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={App}/>
+    <Route path="/language-selector" component={LangSelector}/>
+  </Router>
+), document.getElementById('root'))
